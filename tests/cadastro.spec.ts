@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) =>{
-  await page.goto('file:///C:/Users/Marco%20Figueiredo/projeto-login/index%20(1).html')
+  await page.goto('/')
   const abaCadastro = await page.locator('#tab-register');
   await abaCadastro.click();
 })

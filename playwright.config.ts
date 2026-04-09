@@ -15,11 +15,15 @@ export default defineConfig({
   },
 
   // Sobe um servidor estático antes dos testes
-  webServer: {
-    command: 'npx serve . -p 3000',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-  },
+webServer: {
+  command: 'npx serve . -p 3000',
+  url: 'http://localhost:3000',
+  reuseExistingServer: !process.env.CI,
+},
+
+use: {
+  baseURL: 'http://localhost:3000',
+},
 
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
