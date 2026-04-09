@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 
 test.beforeEach(async ({ page }) =>{
-  await page.goto('file:///C:/Users/Marco%20Figueiredo/projeto-login/index%20(1).html')
+  await page.goto('/')
 })
 
 test.describe('Login com sucesso', async () =>{
@@ -40,17 +40,17 @@ test.describe('Login com falha', async () => {
 })
 
   test('Senha incorreta', async ({ page }) => {
-    // Preenchendo o campo usuário incorretamente
+    // Preenchendo o campo usuário corretamente
     const campoUsuario = await page.locator('#login-email');
     await campoUsuario.fill('emailerrado');
-    // Preenchendo o campo senha corretamente
+    // Preenchendo o campo senha incorretamente
     const campoSenha = await page.locator('#login-password');
-    await campoSenha.fill('Senha@123');
+    await campoSenha.fill('S23');
     // Clicando no botão salvar
     const botaoSalvar = await page.locator('#btn-login');
     await botaoSalvar.click()
     // Validando mensagem de "E-mail inválido"
-    await expect(page.getByText('E-mail inválido')).toBeVisible();
+    await expect(page.getByText('Credencial inválida')).toBeVisible();
 })
 
 
