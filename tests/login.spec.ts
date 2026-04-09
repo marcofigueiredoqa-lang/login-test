@@ -42,7 +42,7 @@ test.describe('Login com falha', async () => {
   test('Senha incorreta', async ({ page }) => {
     // Preenchendo o campo usuário corretamente
     const campoUsuario = await page.locator('#login-email');
-    await campoUsuario.fill('emailerrado');
+    await campoUsuario.fill('teste@gmail.com');
     // Preenchendo o campo senha incorretamente
     const campoSenha = await page.locator('#login-password');
     await campoSenha.fill('S23');
