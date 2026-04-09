@@ -50,7 +50,7 @@ test.describe('Login com falha', async () => {
     const botaoSalvar = await page.locator('#btn-login');
     await botaoSalvar.click()
     // Validando mensagem de "E-mail inválido"
-    await expect(page.getByText('Credencial inválida')).toBeVisible();
+    await expect(page.locator('#hint-login-password')).toBeVisible();
 })
 
 
